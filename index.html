@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width">
+  <title>Analysis of Global Mental Health Trends</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <h1> Analysis of Global Mental Health Trends</h1>
+  <h1> Authors: Christine Guarnieri, Alex Mathias, Max Schnock</h1>
+
+
+  <h2> Topic Introduction </h2>
+  <p> Mental health disorders are more prevalent and more treatable than ever. Understanding the global and
+    chronological trends for various illness groups can provide insight to the most critical treatments, as well as
+    encourage further investigation into the potential sociocultural contexts and causes. Mental healthcare is
+    imperative to a healthy and prosperous society, and historical and statistical understanding is crucial to
+    addressing the modern crisis. It is important to look at this to see if there are countries with more underlying
+    issues consistently over time or to be able to examine if there was an influx of a certain illness at a certain time
+    period. If that is the case, it could lead to more research into the underlying factors of why this was a
+    wide-spread issue at this time. This is an interesting analysis as mental health is not always looked at from a
+    country to country state and such an analysis could reveal interesting information.
+  </p>
+
+  <h3> Relevant Papers</h3>
+  <p>
+    For more information outside of our project on related topics, we have included two reference papers for your
+    convenience. The first is <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10689059/">“Changing trends in the
+      global burden of mental disorders from 1990 to 2019 and predicted
+      levels in 25 years”</a> by Yang Wu et.al.,. This paper walks through how mental disorder rates and trends vary
+    over time
+    and it includes predictions for the years to come. This paper also considers variables such as gender and age when
+    conducting the analysis. The second relevant paper is <a
+      href="https://ourworldindata.org/how-are-mental-illnesses-defined">“How Are Mental Illnesses Defined?”</a> written
+    by Saloni Dattani. This paper outlines the symptoms and potential causes of various different mental illnesses. This
+    has potential relevance for being able to interpret results from our analysis with the added context of what the
+    mental illnesses entail.
+  </p>
+
+  <h2> Data Introduction</h2>
+  <p> We obtained a dataset called “Global Trends in Mental Health Disorder” from <a
+      href="https://www.kaggle.com/datasets/thedevastator/uncover-global-trends-in-mental-health-disorder">Kaggle.</a>
+    It has 11 columns, including an indexing column. The other columns, not including the indexing column, are Entity,
+    Code, Year, Schizophrenia %, Bipolar Disorder %, Eating Disorder %, Anxiety Disorders %, Drug Use disorders%, and
+    Depression %. It contains 108552 data points of information for various dates, countries, and mental health
+    illnesses. This data is able to be used in csv form and loaded into various programming softwares so we can conduct
+    analysis on the set. This dataset has a unique set of information for each country over the years which will allow
+    us to conduct a thorough analysis of the data over time. We also used geospatial data for the world from <a
+      href="https://public.opendatasoft.com/explore/dataset/world-administrative-boundaries/export/?flg=en-us">Open
+      Datasoft</a> of country boundaries. This data allowed us to look at every country from our global mental health
+    dataset at one time.
+  </p>
+  <p> Our data aims to look at global mental health trends over time. To get a basic understanding of our data. We
+    created a simple scatter and line plot to see if global mental health was trending towards and increase or a
+    decrease.</p>
+
+  <h3>Global Mental Illness Over Time</h3>
+  <div class='container'>
+    <div class='image'>
+      <iframe src="Visualizations/scatter_over_time.png" width="100%" height="550px" frameborder="0"></iframe>
+    </div>
+    <div class='text'>
+      <p> This graph took the average percentage of the world for each year 1990-2017 and plotted the point on the
+        graph. As we can see, there is a clear upward trend over time for this graph. This upward trend means the
+        percentage of populations afflicted by some mental illness globally is increasing. This lead us to dive deeper
+        into what specifically was causing this increase. We wanted to examine if this increase is because a a few
+        specific disorders or if there was a general increase across all mental illnesses.
+      </p>
+    </div>
+  </div>
+  <h3>Mental Illness Specific Trends over time</h3>
+  <div class='image'>
+    <iframe src="Visualizations/disorders_over_time.png" width="100%" height="1250" frameborder="0"></iframe>
+  </div>
+  <div class='text'>
+    <p> These graphs show that the majority of mental illnesses are trending upwards from the time span of 1990 to
+      2017. Bipolar disorder, anxiety, Schizophrenia, substance abuse, and eating disorder are all clearly trending
+      upwards. Alcohol use was trending upwards for a while, has a sharp decline hitting its lowest and 2005 before
+      increasing until 2010 where it appears after 2010, it is trending downwards. Interestingly, the only mental
+      disorder consistently trending towards is depression. This helped us to answer the question above regarding is
+      this global increase in mental illnesses due to a specific disorder. We have learned that the vast majority of
+      mental illnesses are trending upwards and mutually contributing to the incrasing global average of mental
+      illness.
+    </p>
+  </div>
+  <h2>Relationship between disorders</h2>
+  <p> We then wanted to see if there was a relationship between any of the mental disorders and each other. We started
+    by looking at depression and alcohol use. </p>
+
+  <p>
+  <h3>
+    Scatter Plot Showing Relationship of Substance Abuse and Depression
+  </h3>
+
+  <script src='https://d3js.org/d3.v7.min.js'></script>
+  <script src='main.js'></script>
+
+  <div class='container'> <svg id="plot"></svg> </div>
+  <div class='container'>
+
+    <p> This graph showed us that there was not a clear relationship between the two disorders. While this does not
+      mean that other disorders aren't related to each other, it shows that depression and alcohol use, the only two
+      disorders that were not consistently trending upwards, do not have a clear relationship with each other.
+    </p>
+  </div>
+
+
+
+
+  <h2>Country Analysis</h2>
+
+  <p> We started to conduct our country by country analysis. We started by taking a look at the United States, the
+    country we all reside in.</p>
+
+  <div class='container'>
+    <div class='image'>
+      <iframe src="Visualizations/us_2017_bar.png" width="100%" height="550px" frameborder="0"></iframe>
+    </div>
+    <div class='text'>
+      <p> This graph shows the most recent data, 2017, for the United State for each mental disorder by percentage.
+        Based on this graph, a much higher percentage of the population are affected by depression and anxiety than are
+        affected by bipolar disorder or eating disorders. Based on this, we created a comparative bar graph.
+      </p>
+    </div>
+
+  </div>
+  <h3>Country Side-By-Side Comparison</h3>
+  <div class='text'>
+    <p> This graph allows the selection of a second country to compare against the United States. To make use of this
+      interactive bar plots, the user can select any country from the dataset to compare to the United States across all
+      mental illnesses to look at how the average percentage affected compares to each country. This reveals that
+      not all countries have the same percentage of mental disorders or even have a similar distribution of
+      percentage of mental disorders. With information like this, it creates questions of if certain mental
+      illnesses are a more regional issue versus a global issue every country should uniformly address.
+    </p>
+  </div>
+  <div class='center'>
+    <iframe src="Visualizations/final_comparison.html" width="100%" height="325px" frameborder="0"></iframe>
+  </div>
+  <div class='text'>
+    <p> This graph reveals that there is a difference country to country compared to the United States. To start with
+      comparing the United States to some of the other largest countries like India and China, United States has almost
+      double the percentage of their population affected by eating disorders, anxiety, and drug use issues. However, all
+      three of these countries were closer to each other in the percentage affected by depression and Schizophrenia.
+      When moving to a different region, we compared the United States to several South American countries like Brazil,
+      Chile, and Uruguay. The United States had a much higher drug use percentage than all these countries but these
+      countries had a close, if not higher, percentage affected by alcohol use issues, with Brazil having almost double
+      their population affected. We continued to look at some European countries, Germany, United Kingdom, and Sweden,
+      as well as some African countries, Nigeria, Senegal, and Cote d'Ivorie. For the European countries, we found the
+      ones we looked at were similar in percentages across the board to the United States. However, the differences
+      between the United States and the African countries we selected was staggering. While the United States and these
+      countries had similar percentages for bipolar disorder, every other percentage, the United States had
+      significantly higher of their population affected, with the population affected by anxiety and drug use issues
+      being almost triple those of Nigeria, Senegal, and Cote d'Ivorie. Based on this, we wanted to expand this
+      comparison to the entire world all in one visualization.
+    </p>
+
+
+    <h2>World Chloropleth Map</h2>
+
+    <div class='text'>
+      <p>As map was too large of a file to be contained, <a
+          href='https://drive.google.com/file/d/1trr1FTHJsOZ7x-Gl-rRp_M_cMiAJLhH0/view?usp=sharing'>Map Linked</a>, this
+        is a link to a google drive html file that includes this interactive map, as instructed by Professor.</p>
+      <p> In order to use this map, users can select the layers buttom on the right hand side and select as many layers
+        or as few layers as they desire to be visible at once. This interactivity allows for the user to compare
+        specific time frames or specific illnesses over the whole world to see if there is any regional or geographic
+        details that can be discerned. </p>
+    </div>
+    <h3>1990 Legend</h3>
+
+    <div class='image'>
+      <iframe src="Visualizations/1990_legend.png" width="100%" height="180px" frameborder="0"></iframe>
+    </div>
+    <h3>2015 Legend</h3>
+
+    <div class='image'>
+      <iframe src="Visualizations/2015_legend.png" width="100%" height="170px" frameborder="0"></iframe>
+    </div>
+    <div class='text'>
+      <p>This map reveals a lot of interesting information about the worldwide trends in mental health issues. Starting
+        with drug_use, the countries that had a higher percentage affected by this issue are highly concentrated in
+        North America, Oceania, and Northern Africa/Middle East. This remains constant in 1990 and 2015, suggesting that
+        these percentages are not likely changing regionally what mental illnesses affect specific parts of the world.
+        This map also revealed that South America and most of Eastern Europe had consistently low percentages of their
+        populations affected by drug use issues. When looking at depression, in both 1990 and 2015, the spread of
+        percentages of populations affect is much more mild with most countries in a similar range, except Greenland,
+        the only country with over 6% of their population affected in both 1990 and 2015, suggesting some underlying
+        reason in Greenland for this large of a difference. Eating disorders appear to be more prevelant in North
+        America, Oceania, and Western Europe in both 1990 and 2015. Overall, this map reveals interesting information
+        about the geographical spread of percentages of populations affected. </p>
+    </div>
+
+
+  </div>
+
+  <h2>Summary and Additional Work</h2>
+  <h3>Summary of Results</h3>
+  <p>
+    We are able to draw several interesting conclusions. Mental Health Illnesses in general appear to be trending
+    upwards overall. This could lead to some interesting future work to see if there can be reasons as to why these
+    illnesses have been trending upwards consistently over 20 years.
+  </p>
+  <p>Through our interactive comparison of graphs, we were able to determine that these increases in average mental
+    illnesses are not the same for each country. When comparing countries against the United States, there are a lot of
+    countries that were vastly different in average mental illness percentages. This means we cannot rule out that the
+    increase globally is not applicable to all countries as some may have been trending downwards.
+  </p>
+  <p> Our interactive map graph was also able to show us the vast differences in concentration of mental illnesses. For
+    example, eating disorders have a much higher percentage in North America than in Africa and South Asia. A more
+    detailed analysis was included beneath the graph. THis showed us that there is merit to the idea that specific
+    regions are driving up the increasing rates of mental illnesses globally. This would mean that the global mental
+    health percentage for these illnesses is increasing but that is only true for specific regions.
+  </p>
+  <h3>Future Work</h3>
+  <p>Based on this, we would consider future work in examining specific factors from country to country and if they
+    could link to the difference in country but the overall upwards trend in global mental illnesses. We were able to
+    see that not every country had the same trends. By diving furhter into regional or even country specific demographic
+    information, we could be able to further see exact reasons why specific illnesses are increasing in one region but
+    not in another. </p>
+  <p>In future work, we would also want to get a more updated dataset. While this dataset provided a lot of great
+    insight, the information stopped at 2017. With the Covid-19 pandemic occurring in 2020 and the rise of mental health
+    concerns because of the pandemic, it would be useful to have more up to date data we could use to determine the
+    potential influence of Covid-19 on mental health globally. </p>
+
+
+
+</html>
